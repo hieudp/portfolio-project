@@ -13,7 +13,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Jekyll v3.8.6" />
-    <title>Hieu's Blog</title>
+    <title>{{ blog.title }}</title>
 
     <link
       rel="canonical"
@@ -106,42 +106,23 @@
     </header>
 
     <main role="main">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1>Hi, I'm Hieu</h1>
-          <p class="lead text-muted">
-            Hey, my name is Hieu, I am a 3rd year bachelor in Computer Science from NTNU.
-          </p>
-          <p>
-            <a href="mailto:hpham794@gmail.com" class="btn btn-primary my-2">Email Me</a>
-          </p>
-          <img src="{% static 'hieu.jpg' %}"
-        </div>
-      </section>
+      <div class="container">
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-
-            {% for job in jobs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ job.image.url }}"/>
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c" />
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                  </text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                   {{ job.summary }}
-                  </p>
+            <div class="container-blogs">
+                <h1 class="text-center pt-3">{{ blog.title }}</h1>
+                <p class="text-center">{{ blog.pub_date }}</p>
+                <div class="text-center">
+                <img class="img-fluid" src="{{ blog.image.url }}" width="500" height="500"/>
                 </div>
-              </div>
+                <br />
+                <br />
+                <p class="text-center">
+                    {{ blog.body }}
+                   </p>
             </div>
-            {% endfor %}
-
-                </main>
+            <br />
+      </div>
+    </main>
 
     <footer class="text-muted">
       <div class="container text-center">
